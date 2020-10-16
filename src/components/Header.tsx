@@ -1,10 +1,14 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
-export default function Header() {
+interface HeaderProps {
+    title: string;
+}
+
+export default function Header(props: HeaderProps) {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Title</Text>
+            <Text style={styles.title}>{props.title}</Text>
         </View>
     );
 }
@@ -14,7 +18,7 @@ const styles = StyleSheet.create({
         padding: 24,
         backgroundColor: '#f9fafc',
         borderBottomWidth: 1,
-        borderColor: 'dde3f0',
+        borderColor: '#dde3f0',
         paddingTop: 44,
 
         flexDirection: 'row',
@@ -24,7 +28,7 @@ const styles = StyleSheet.create({
 
     title: {
         fontFamily: 'Nunito_600SemiBold',
-        color: '8fa7b3',
+        color: '#8fa7b3',
         fontSize: 16,
     }
 })
